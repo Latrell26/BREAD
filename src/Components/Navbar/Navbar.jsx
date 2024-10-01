@@ -22,9 +22,9 @@ const Navbar = () => {
         ) : (
           <>
             {/* Only show Home link if on the home page */}
-            <li className="nav-item"><Link to="#home" className="nav-link">Home</Link></li>
-            <li className="nav-item_2"><Link to="#about" className="nav-link">About</Link></li>
-            <li className="nav-item_3"><Link to="#news" className="nav-link">News</Link></li>
+            <li className="nav-item"><a href="#home" className="nav-link">Home</a></li> 
+            <li className="nav-item_2"><a href="#about" className="nav-link">About</a></li> 
+            <li className="nav-item_3"><a href="#news" className="nav-link">News</a></li> 
             <li className="nav-item_last"><Link to='/donation'>Donation</Link></li> 
           </>
         )}
