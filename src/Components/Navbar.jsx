@@ -1,5 +1,6 @@
 //This is the navbar
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/bread-black.png';
 
 const Navbar = () => {
@@ -14,7 +15,9 @@ const Navbar = () => {
         <li className="nav-item"><a href="#home" className="nav-link">Home</a></li>
         <li className="nav-item"><a href="#about" className="nav-link">About</a></li>
         <li className="nav-item"><a href="#news" className="nav-link">News</a></li>
-        <li className="nav-item"><a href="Donation.html" className="nav-link">Donation</a></li>
+
+        <li className="nav-item"><Link to='/donation'>Donation</Link></li> 
+
       </ul>
     </nav>
   );

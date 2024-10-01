@@ -1,22 +1,38 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import HomeSection from './Components/Homesection';
-import AboutSection from './Components/Aboutsection';
+import HomeSection from './Components/HomeSection';
+import AboutSection from './Components/AboutSection';
 import DonationSection from './Components/DonationSection';
 import NewsSection from './Components/NewsSection';
 import Footer from './Components/Footer';
+import Donation from './Components/page/Donation'
 
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <HomeSection />
-      <AboutSection />
-      <DonationSection />
-      <NewsSection />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Navbar />
+            <HomeSection />
+            <AboutSection />
+            <DonationSection />
+            <NewsSection />
+            <Footer />
+          </>
+        }/>
+
+        <Route path='/donation' element={ 
+          <>
+            <Navbar />
+            <Donation/>
+          </>
+          }/> 
+
+      </Routes>
+    </Router>
   );
 };
 
