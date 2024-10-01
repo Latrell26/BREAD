@@ -1,5 +1,6 @@
 //This is the about section
 import React from 'react';
+import './AboutSection.css'
 
 const AboutSection = () => {
   return (

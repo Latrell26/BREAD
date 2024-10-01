@@ -1,9 +1,11 @@
 //This is the footer
 import React from 'react';
-import logoWhite from '../assets/bread-white.png';
-import fbIcon from '../assets/icons8-facebook-50.png';
-import igIcon from '../assets/icons8-ig-50.png';
-import ytIcon from '../assets/icons8-youtube-50.png';
+import './Footer.css'
+import logoWhite from "../../assets/bread-white.png";
+import fbIcon from "../../assets/icons8-facebook-50.png";
+import igIcon from "../../assets/icons8-ig-50.png";
+import ytIcon from "../../assets/icons8-youtube-50.png";
+
 
 const Footer = () => {
   return (

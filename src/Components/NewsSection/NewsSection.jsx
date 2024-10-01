@@ -1,5 +1,6 @@
 // This is the news section
 import React from 'react';
+import './NewsSection.css'
 
 const NewsSection = () => {
   return (

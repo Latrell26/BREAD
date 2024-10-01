@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #fdfdfd;
+    height: 80px;
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.05);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo {
+  position: absolute; 
+  top: 50%; 
+  left: 5%; 
+  transform: translateY(-50%); 
+}
+  
+nav ul {
+  float: right;
+  margin-right: 100px; 
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+  
+.nav-link {
+  color: #1f1f1f;
+  font-size: 17px;
+  padding: 7px 25px;
+}
+
+  
+.nav-link:hover {
+  color: #31cc86;
+  transition: 0.4s;
+}
+
+.nav-item_last a {
+  background-color: #31cc86;
+  height: 35px;
+  color: #ffffff;
+  line-height: 20px;
+  border-radius: 20px;
+  border: 2px solid #31cc86;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  padding: 7px 25px;
+  font-size: 17px;
+}
+
+.nav-item_last a:hover {
+  background-color: #ffffff;
+  color: #31cc86;
+}
+  
+.checkbtn {
+  font-size: 20px;
+  color: #1f1f1f;
+  position: absolute; 
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none; 
+}

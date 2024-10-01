@@ -1,5 +1,6 @@
 //This is the home section
 import React from 'react';
+import './HomeSection.css'
 
 const HomeSection = () => {
   return (

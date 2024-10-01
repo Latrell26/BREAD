@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import HomeSection from './Components/HomeSection';
-import AboutSection from './Components/AboutSection';
-import DonationSection from './Components/DonationSection';
-import NewsSection from './Components/NewsSection';
-import Footer from './Components/Footer';
-import Donation from './Components/page/Donation'
+import Navbar from './Components/Navbar/Navbar';
+import HomeSection from './Components/HomeSection/HomeSection';
+import AboutSection from './Components/AboutSection/AboutSection';
+import NumbersSections from './Components/NumbersSection/NumbersSection'
+import NewsSection from './Components/NewsSection/NewsSection';
+import Footer from './Components/Footer/Footer';
+import Donation from './Components/Page/Donation'
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
             <Navbar />
             <HomeSection />
             <AboutSection />
-            <DonationSection />
+            <NumbersSections />
             <NewsSection />
             <Footer />
           </>

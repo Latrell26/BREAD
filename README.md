@@ -15,6 +15,7 @@
 - React Snippet: https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 - Vitejs: https://vitejs.dev
 - Node.js: https://nodejs.org/en
+- React Router: https://reactrouter.com/en/main
 
 > Resources
 - Icons: https://fontawesome.com/
