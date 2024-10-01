@@ -6,7 +6,7 @@ import AboutSection from './Components/AboutSection/AboutSection';
 import NumbersSections from './Components/NumbersSection/NumbersSection'
 import NewsSection from './Components/NewsSection/NewsSection';
 import Footer from './Components/Footer/Footer';
-import Donation from './Components/Page/Donation'
+import Donation from './Components/Page/Donation.jsx';
 
 
 const App = () => {
