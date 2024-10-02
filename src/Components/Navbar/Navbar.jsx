@@ -1,7 +1,7 @@
 //This is the navbar
 import React from 'react';
 import './Navbar.css'
-import { Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from "../../assets/bread-black.png";
 
 const Navbar = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
           <li className="nav-item_last"><Link to='/'>Home</Link></li> // Only show Home link if on the donation page
         ) : (
           <>
-            {/* Only show Home link if on the home page */}
+            {/* Shows all link if on the home page */}
             <li className="nav-item"><a href="#home" className="nav-link">Home</a></li> 
             <li className="nav-item_2"><a href="#about" className="nav-link">About</a></li> 
             <li className="nav-item_3"><a href="#news" className="nav-link">News</a></li> 
