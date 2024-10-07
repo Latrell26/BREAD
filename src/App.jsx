@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={
           <>
-            <Navbar />
+            <Navbar />  
             <HomeSection />
             <AboutSection />
             <NumbersSections />
