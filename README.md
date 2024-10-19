@@ -3,9 +3,9 @@
 - Status: Working...
 
 # Maintainers:
-- John Elvin S. Endrenal (Fullstack)
-- Matthew Manalang (Backend)
-- Latrell Cruz (Frontend)
+- John Elvin S. Endrenal
+- Matthew Manalang
+- Latrell Cruz
 
 # Tools to Use: 
 
@@ -22,7 +22,9 @@
 - Fonts: https://fonts.google.com
 - Color Hex Codes: https://color-hex.com/ 
 
+> Note from the team;
+We've observed that the website currently feels static, so our team has decided to implement new navigation routes to enhance the user experience. We’re adding a "Careers" section to highlight our job openings and a "Bread for Good" section to share insights into our vision and mission. 
 
+We're actively developing an authentication system and a user-friendly dashboard for tracking donation routes. This will help us stay connected!
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-You have Reached the end! Thank you for taking the time to read this.
