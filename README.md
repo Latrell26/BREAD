@@ -26,6 +26,6 @@
 
 We've observed that the website currently feels static, so our team has decided to implement new navigation routes to enhance the user experience. We’re adding a "Careers" section to highlight our job openings and a "Bread for Good" section to share insights into our vision and mission. 
 
-We're actively developing an authentication system and a user-friendly dashboard for tracking donation routes. This will help us stay connected!
+We're actively developing an authentication system and a user-friendly dashboard for tracking donation routes.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
