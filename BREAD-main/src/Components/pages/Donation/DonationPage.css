@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.donation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px 20px 20px;
+}
+
+.donation-step {
+    margin-bottom: 20px;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.payment-details {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body::before {
+    content: "";
+    display: block;
+    height: 60px;
+}
