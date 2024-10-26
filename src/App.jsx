@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar';
-import HomeSection from './Components/HomeSection/HomeSection';
-import AboutSection from './Components/AboutSection/AboutSection';
-import NumbersSections from './Components/NumbersSection/NumbersSection'
-import NewsSection from './Components/NewsSection/NewsSection';
-import Footer from './Components/Footer/Footer';
-import MainSection from './Components/pages/careers/MainSection';
-import FirstSection from './Components/pages/breadforgood/FirstSection';
-
+import Navbar from './components/navbar/Navbar';
+import HomeSection from './components/homesection/HomeSection';
+import AboutSection from './components/aboutsection/AboutSection';
+import NumbersSections from './components/numberssection/NumbersSection';
+import NewsSection from './components/newssection/NewsSection';
+import Footer from './components/footer/Footer';
+import MainSection from './components/pages/careers/MainSection';
+import FirstSection from './components/pages/breadforgood/FirstSection';
+import DonationPage from './components/pages/donation/DonationPage';
 
 const App = () => {
   return (
@@ -27,13 +27,16 @@ const App = () => {
         <Route path='/donation' element={ 
           <>
             <Navbar />
+            <DonationPage /> 
+            {/* <Footer /> */}
           </>
-          }/> 
+        }/> 
 
         <Route path='/careers' element={
           <>
             <Navbar />
             <MainSection />
+            <Footer />
           </>
         }/>
 
@@ -41,6 +44,7 @@ const App = () => {
           <>
             <Navbar />
             <FirstSection />
+            <Footer />
           </>
         }/>
 
