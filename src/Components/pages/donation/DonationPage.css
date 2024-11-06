@@ -13,6 +13,7 @@ body {
     line-height: 1.6;
 }
 
+
 .donation-container {
     max-width: 600px;
     margin: 80px auto;
@@ -46,7 +47,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: #12985c;
     background-color: #f0f7ff;
 }
 button {
@@ -57,7 +58,7 @@ button {
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: #2563eb;
+    background-color: #12985c;
 }
 
 button:disabled {
@@ -80,11 +81,11 @@ button:disabled {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .payment-button:hover {
-    background-color: #3b82f6;
+    background-color: #12985c;
     color: #fff;
 }
 .payment-button.active {
-    background-color: #2563eb;
+    background-color: #12985c;
     color: white;
 }
 .payment-details {

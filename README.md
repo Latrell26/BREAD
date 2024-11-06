@@ -16,6 +16,7 @@
 - Vitejs: https://vitejs.dev
 - Node.js: https://nodejs.org/en
 - React Router: https://reactrouter.com/en/main
+- MongoDB: https://www.mongodb.com/
 
 > Resources
 - Icons: https://fontawesome.com/

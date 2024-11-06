@@ -10,53 +10,14 @@ const DonationPage = () => {
     const [donationAmount, setDonationAmount] = useState('');
     const [donorInfo, setDonorInfo] = useState({ name: '', email: '', contact: '' });
     const [paymentMethod, setPaymentMethod] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
-
-    // Confirm Donation with Loading and Success State
-    const handleConfirm = async () => {
-        setLoading(true);
-        try {
-            // Send the donation data to the server
-            const response = await axios.post('http://localhost:5001/api/donations', {
-                donorName: donorInfo.name,
-                email: donorInfo.email,
-                contact: donorInfo.contact,
-                amount: parseFloat(donationAmount),
-                paymentMethod,
-            });
-
-            if (response.status === 201) {
-                // Show success message and reset form after a delay
-                setSuccess(true);
-                setTimeout(() => {
-                    resetForm();
-                }, 2000);
-            }
-        } catch (error) {
-            console.error("Error submitting donation:", error);
-            alert("There was an error submitting your donation. Please try again.");
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    // Reset the form
-    const resetForm = () => {
-        setStep(1);
-        setDonationAmount('');
-        setDonorInfo({ name: '', email: '', contact: '' });
-        setPaymentMethod('');
-        setSuccess(false);
-    };
 
     // Step 1: Select Donation Amount
     const renderStep1 = () => (
         <div className="donation-step">
             <h2>Select Donation Amount</h2>
+            <button onClick={() => setDonationAmount('50')}>₱50</button>
+            <button onClick={() => setDonationAmount('100')}>₱100</button>
             <button onClick={() => setDonationAmount('500')}>₱500</button>
-            <button onClick={() => setDonationAmount('1000')}>₱1000</button>
-            <button onClick={() => setDonationAmount('1500')}>₱1500</button>
             <input 
                 type="number" 
                 placeholder="Enter custom amount" 
@@ -67,10 +28,27 @@ const DonationPage = () => {
         </div>
     );
 
-    // Step 2: Collect Donor Information
+    // Step 2: Collect Donor Information with Validation
+    const handleNextStep = () => {
+        const { name, email, contact } = donorInfo;
+
+        if (!name || !email || !contact) {
+            alert('Please fill in all required fields.');
+        }
+        
+        else if (!/^\d+$/.test(contact)) {
+            alert('Enter valid number');
+        }
+
+        else if (!email.endsWith('@gmail.com')) {
+            alert('Enter valid email');
+        }
+    };
+
     const renderStep2 = () => (
         <div className="donation-step">
             <h2>Enter Your Information</h2>
+            {error && <p className="error-message">{error}</p>}
             <input 
                 type="text" 
                 placeholder="Name" 
@@ -89,7 +67,7 @@ const DonationPage = () => {
                 value={donorInfo.contact} 
                 onChange={(e) => setDonorInfo({ ...donorInfo, contact: e.target.value })} 
             />
-            <button onClick={() => setStep(3)}>Next</button>
+            <button onClick={handleNextStep}>Next</button>
             <button onClick={() => setStep(1)}>Back</button>
         </div>
     );
@@ -152,24 +130,16 @@ const DonationPage = () => {
                     )}
                 </div>
             )}
-            <button onClick={handleConfirm}>Confirm</button>
+    
+            <button onClick={() => setStep(2)}>Back</button>
         </div>
     );
 
     return (
-        <div className="main-container">
-            <div className="donation-container">
-                {loading && <p>Loading...</p>}
-                {success && <p>Donation Successful!</p>}
-                {!loading && !success && (
-                    <>
-                        {step === 1 && renderStep1()}
-                        {step === 2 && renderStep2()}
-                        {step === 3 && renderStep3()}
-                    </>
-                )}
-            </div>
-            <Footer />
+        <div className="donation-container">
+            {step === 1 && renderStep1()}
+            {step === 2 && renderStep2()}
+            {step === 3 && renderStep3()}
         </div>
     );
 };

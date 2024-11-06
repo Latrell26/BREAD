@@ -1,0 +1,113 @@
+.fourth-part {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  background-color: #fdfdfd;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 750px;
+  padding: 30px;
+}
+
+.donate1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.Heading1 {
+  font-size: 45px;
+  color: #28a745;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+.LearnMoreButton {
+  margin-top: 20px;
+  padding: 10px 16px;
+  font-size: 19px;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  width: 150px;
+}
+
+.LearnMoreButton:hover {
+  background-color: #22963d;
+}
+
+@media (max-width: 1258px) {
+  .donate1 {
+    height: 300px;
+    margin-right: -70px;
+    margin-left: 80px;
+    position: relative;
+  }
+
+  .Heading1 {
+    font-size: 38px;
+  }
+
+  .Description1 p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 948px) {
+  .donate1 {
+    height: 280px;
+    margin-right: -70px;
+    margin-left: 30px;
+    width: 550px;
+  }
+
+  .Heading1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 790px) {
+  .fourth-layer {
+    min-height: auto;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+  }
+
+  .donate1 {
+    width: 100vw;
+    margin-left: calc((100vw - 100%) / -2);/*chatgpt na HAHAHAHA de keri sakit na sa ulo tong part na to*/
+    margin-right: calc((100vw - 100%) / -2);
+    margin-bottom: 40px;
+    height: auto;
+    order: 2;
+  }
+
+  .Description {
+    width: 100%;
+    order: 1;
+  }
+
+  .Heading1 {
+    font-size: 38px;
+    margin-top: -45px;
+  }
+
+  .Description1 p {
+    margin-top: -5px;
+    font-size: 18px;
+  }
+}

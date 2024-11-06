@@ -1,0 +1,199 @@
+.second-layer {
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    background-color: #fdfdfd;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+    min-height: 700px;
+    padding: 30px;
+  }
+  
+  .container {
+    display: flex; 
+    align-items: center;
+    gap: 80px;
+  }
+  
+  .donate {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-right: -20px; 
+  }
+  
+  .donateClass {
+    width: 600px; 
+    height: auto; 
+    max-height: 100%; 
+    object-fit: contain; 
+    border-radius: 15px;
+  }
+  
+  .Description {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+  }
+  
+  .Heading {
+    font-size: 45px;
+    color: #28a745;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    padding-bottom: 20px;
+  }
+  
+  .Description p {
+    font-size: 20px;
+    color: #1f1f1f;
+    line-height: 1.5;
+    padding-bottom: 15px;
+  }
+  
+  .LearnMoreButton {
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 19px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    width: 150px;
+  }
+  
+  .LearnMoreButton:hover {
+    background-color: #22963d;
+  }
+  
+  
+  @media (max-width: 1258px){
+    .donate{
+      height: 300px;
+      margin-left: -80px;
+  
+    }
+    .Description {
+      position: relative;
+      width: 100%; 
+    }
+  
+    .Heading {
+      font-size: 38px;
+    }
+  
+    .Description p {
+      font-size: 17px;
+      }
+  
+    .LearnMoreButton {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  
+    .container {
+      gap: 0px;
+    }
+  }
+  @media (max-width: 948px){
+    .donate{
+      height: 280px;
+      margin-left: -95px;
+    }
+    .Description {
+      position: relative;
+      width: 100%; 
+      }
+  
+    .Heading {
+      font-size: 36px;
+    }
+  
+    .LearnMoreButton {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  
+    .donateClass{
+      width: 550px;
+      margin-left: 25px;
+    }
+  }
+  
+  
+  @media (max-width: 831px){
+    .Description {
+      position: relative;
+      width: 100%; 
+      }
+  
+    .Heading {
+      font-size: 34px;
+    }
+  
+    .Description p {
+      font-size: 18px;
+      }
+  
+    .LearnMoreButton {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+    .donateClass{
+      width: 550px;
+      margin-left: 25px;
+    }
+  }
+  @media (max-width: 790px) {
+    .Third-layer {
+      min-height: auto;
+      flex-direction: column;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      width: 100%; 
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+  
+    .donate {
+      width: 100vw; 
+      margin-left: calc((100vw - 100%) / -2); /*chatgpt na HAHAHAHA de keri sakit na sa ulo tong part na to*/
+      margin-right: calc((100vw - 100%) / -2); 
+      margin-bottom: 40px;
+      height: auto;
+    }
+  
+    .donateClass {
+      width: 100%; 
+      max-width: 100%;
+      height: auto; 
+      margin-left: 0px;
+  
+    }
+  
+    .Description {
+      width: 100%;
+      margin-left: -20px ;
+    }
+  
+    .Heading {
+      margin-top: -5px;
+      font-size: 38px;
+    }
+  
+    .Description p {
+      margin-top: -5px;
+      font-size: 18px;
+      }
+   
+  }
