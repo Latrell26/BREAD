@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DonationPage.css'; // Add custom styling here
+import './DonationPage.css';
 import mayaQRCode from "../../../assets/maya.jpg";
 import gcashQRCode from "../../../assets/gcash.jpg";
 
@@ -8,6 +8,24 @@ const DonationPage = () => {
     const [donationAmount, setDonationAmount] = useState('');
     const [donorInfo, setDonorInfo] = useState({ name: '', email: '', contact: '' });
     const [paymentMethod, setPaymentMethod] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    // Confirm Donation with Loading and Success State
+    const handleConfirm = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            setSuccess(true);
+            setTimeout(() => {
+                setSuccess(false);
+                setStep(1);
+                setDonationAmount('');
+                setDonorInfo({ name: '', email: '', contact: '' });
+                setPaymentMethod('');
+            }, 2000); // Show success message for 2 seconds before resetting
+        }, 2000); // Simulate a 2-second loading delay
+    };
 
     // Step 1: Select Donation Amount
     const renderStep1 = () => (
@@ -84,7 +102,7 @@ const DonationPage = () => {
                         </div>
                     )}
     
-                        {paymentMethod === 'paymaya' && (
+                    {paymentMethod === 'paymaya' && (
                         <div>
                             <p>Scan the QR code to pay via PayMaya:</p>
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -92,7 +110,6 @@ const DonationPage = () => {
                             </div>
                         </div>
                     )}
-
     
                     {paymentMethod === 'paypal' && (
                         <div>
@@ -113,15 +130,21 @@ const DonationPage = () => {
                     )}
                 </div>
             )}
-    
-            <button onClick={() => setStep(2)}>Back</button>
+            <button onClick={handleConfirm}>Confirm</button>
         </div>
     );
+
     return (
         <div className="donation-container">
-            {step === 1 && renderStep1()}
-            {step === 2 && renderStep2()}
-            {step === 3 && renderStep3()}
+            {loading && <p>Loading...</p>}
+            {success && <p>Donation Successful!</p>}
+            {!loading && !success && (
+                <>
+                    {step === 1 && renderStep1()}
+                    {step === 2 && renderStep2()}
+                    {step === 3 && renderStep3()}
+                </>
+            )}
         </div>
     );
 };
