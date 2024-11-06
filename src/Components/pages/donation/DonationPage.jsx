@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './DonationPage.css';
 import mayaQRCode from "../../../assets/maya.jpg";
 import gcashQRCode from "../../../assets/gcash.jpg";
@@ -13,19 +14,40 @@ const DonationPage = () => {
     const [success, setSuccess] = useState(false);
 
     // Confirm Donation with Loading and Success State
-    const handleConfirm = () => {
+    const handleConfirm = async () => {
         setLoading(true);
-        setTimeout(() => {
+        try {
+            // Send the donation data to the server
+            const response = await axios.post('http://localhost:5001/api/donations', {
+                donorName: donorInfo.name,
+                email: donorInfo.email,
+                contact: donorInfo.contact,
+                amount: parseFloat(donationAmount),
+                paymentMethod,
+            });
+
+            if (response.status === 201) {
+                // Show success message and reset form after a delay
+                setSuccess(true);
+                setTimeout(() => {
+                    resetForm();
+                }, 2000);
+            }
+        } catch (error) {
+            console.error("Error submitting donation:", error);
+            alert("There was an error submitting your donation. Please try again.");
+        } finally {
             setLoading(false);
-            setSuccess(true);
-            setTimeout(() => {
-                setSuccess(false);
-                setStep(1);
-                setDonationAmount('');
-                setDonorInfo({ name: '', email: '', contact: '' });
-                setPaymentMethod('');
-            }, 2000); // Show success message for 2 seconds before resetting
-        }, 2000); // Simulate a 2-second loading delay
+        }
+    };
+
+    // Reset the form
+    const resetForm = () => {
+        setStep(1);
+        setDonationAmount('');
+        setDonorInfo({ name: '', email: '', contact: '' });
+        setPaymentMethod('');
+        setSuccess(false);
     };
 
     // Step 1: Select Donation Amount
@@ -77,11 +99,11 @@ const DonationPage = () => {
         <div className="donation-step">
             <h2>Select Payment Method</h2>
             <div className="payment-options">
-                <button onClick={() => setPaymentMethod('gcash')}>GCash</button>
-                <button onClick={() => setPaymentMethod('paymaya')}>PayMaya</button>
-                <button onClick={() => setPaymentMethod('paypal')}>PayPal</button>
-                <button onClick={() => setPaymentMethod('bpi')}>BPI</button>
-                <button onClick={() => setPaymentMethod('bdo')}>BDO</button>
+                {['gcash', 'paymaya', 'paypal', 'bpi', 'bdo'].map(method => (
+                    <button key={method} onClick={() => setPaymentMethod(method)}>
+                        {method.charAt(0).toUpperCase() + method.slice(1)}
+                    </button>
+                ))}
             </div>
     
             {paymentMethod && (
@@ -93,12 +115,11 @@ const DonationPage = () => {
                          'Bank Information'}
                     </h3>
     
-                    {/* Conditionally rendering content for each payment method */}
                     {paymentMethod === 'gcash' && (
                         <div>
                             <p>Scan the QR code to pay via GCash:</p>
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <img src={gcashQRCode} alt="PayMaya QR Code" style={{ maxWidth: '300px' }} />
+                                <img src={gcashQRCode} alt="GCash QR Code" style={{ maxWidth: '300px' }} />
                             </div>
                         </div>
                     )}
@@ -134,6 +155,7 @@ const DonationPage = () => {
             <button onClick={handleConfirm}>Confirm</button>
         </div>
     );
+
     return (
         <div className="main-container">
             <div className="donation-container">
