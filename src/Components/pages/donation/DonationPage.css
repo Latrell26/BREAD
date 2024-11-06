@@ -1,48 +1,107 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
 }
+
 
 .donation-container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 100px 20px 20px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-.donation-step {
+.donation-step h2 {
+    color: #111827;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
-
-input, button {
-    display: block;
+.donation-step {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+button {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 14px 18px;
+    margin: 12px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #12985c;
+    background-color: #f0f7ff;
+}
+button {
+    background-color: #31cc86;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #12985c;
 }
 
+button:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+}
 .payment-options {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 10px;
 }
-
+.payment-button {
+    flex: 1;
+    background-color: #e5e7eb;
+    color: #111827;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.payment-button:hover {
+    background-color: #12985c;
+    color: #fff;
+}
+.payment-button.active {
+    background-color: #12985c;
+    color: white;
+}
 .payment-details {
     margin-top: 20px;
-}
-
-footer {
-    background-color: #222;
-    color: white;
     padding: 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.payment-details h3 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
 }
 
-body::before {
-    content: "";
-    display: block;
-    height: 60px;
+.qr-code {
+    max-width: 100%;
+    border-radius: 8px;
 }

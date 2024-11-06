@@ -6,13 +6,15 @@ import NumbersSections from './components/numberssection/NumbersSection';
 import NewsSection from './components/newssection/NewsSection';
 import Footer from './components/footer/Footer';
 import MainSection from './components/pages/careers/MainSection';
-import FirstSection from './components/pages/breadforgood/FirstSection';
+import FirstSection from './components/pages/breadforgood/firstsection/FirstSection';
+import SecondSection from './components/pages/breadforgood/secondsection/SecondSection';
+import ThirdSection from './components/pages/breadforgood/thirdsection/ThirdSection';
 import DonationPage from './components/pages/donation/DonationPage';
 
 const App = () => {
   return (
     <Router>
-      <Routes>
+      <Routes>s
         <Route path='/' element={
           <>
             <Navbar />
@@ -44,6 +46,8 @@ const App = () => {
           <>
             <Navbar />
             <FirstSection />
+            <SecondSection />
+            <ThirdSection />
             <Footer />
           </>
         }/>
